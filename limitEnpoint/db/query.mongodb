@@ -1,0 +1,46 @@
+use("db_limit_mongo");
+db.createCollection("usuario",{
+    capped: true,
+    size : 690, 
+    max : 5,
+    validator: {
+        $jsonSchema: {
+          bsonType: 'object',
+          additionalProperties: false,
+          required: ['cc', 'nombre', 'edad'],
+          properties: {
+            _id:{
+                bsonType: 'objectId',
+            },
+            cc:{
+                bsonType: "int",
+                description: "La cedula es obligatorio y tiene que se de tipo numerico"
+            },
+            nombre: { 
+                // https://www.mongodb.com/docs/atlas/app-services/schemas/types/#std-label-schema-type-string
+                bsonType: 'string',
+                description: '{"status": "402", "message": "El nombre_usuario es obligatorio y solo resive letras"}' ,
+                pattern: "^[a-zA-Z ]+$"
+            },
+            apellido: { 
+                bsonType: 'string',
+                description: 'El apellido debe ser un string' 
+            },
+            edad: { 
+                bsonType: 'int',
+                description: '{"status": "402", "message": "La edad_usuario es obligatorio y debe ser un numero"}' 
+            }
+          },
+        }
+    }
+});
+
+use("db_limit_mongo");
+db.usuario.insertMany([
+    {
+        "nombre": "1",
+        "apellido": "aaaaaaaaaaaaaaaaaaaa",
+        "edad": 111,
+        "email": "egh"
+    },
+]);
