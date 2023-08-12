@@ -8,9 +8,11 @@
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true
     },
+
     "include": [
         "./routers/storage/*.ts"
     ],
+    
     "exclude": [
         "./routers/storage/*.js"
     ]

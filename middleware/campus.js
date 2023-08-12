@@ -1,11 +1,11 @@
 import 'reflect-metadata';
-import {plainToClass, classToPlain} from 'class-transformer';
-import {validate} from 'class-validator';
+import { plainToClass, classToPlain } from 'class-transformer';
+import { validate } from 'class-validator';
 import { DTO } from "../limit/token.js";
 import { Router } from "express";
+
 const middlewareVerify = Router();
 const DTOData = Router();
-
 
 middlewareVerify.use((req,res,next) => {
     if(!req.rateLimit) return; 

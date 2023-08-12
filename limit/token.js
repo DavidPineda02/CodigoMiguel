@@ -1,21 +1,19 @@
 import 'reflect-metadata';
-import {plainToClass, classToPlain } from 'class-transformer';
+import { plainToClass, classToPlain } from 'class-transformer';
 import dotenv from 'dotenv';
-import {Router} from 'express';
+import { Router } from 'express';
 import { SignJWT, jwtVerify } from 'jose';
 import { User } from "../routers/storage/usuario.js";
 import { Error } from "../routers/storage/mongo.js";
-
 
 dotenv.config("../");
 const appToken = Router();
 const appVerify = Router();
 
-
 const DTO = (p1) => {
     const match = {
-      'usuario': User,
-      'mongo': Error
+        'usuario': User,
+        'mongo': Error
     };
     const inst = match[p1];
     if(!inst) throw {status: 404, message: "Token solicitado no valido"}
@@ -58,8 +56,7 @@ export {
     appToken,
     appVerify,
     DTO
-};
-
 
 
 /* DAVID ES PUTO */
+
