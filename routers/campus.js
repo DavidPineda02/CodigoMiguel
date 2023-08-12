@@ -9,6 +9,7 @@ const appCampus = Router();
 let db = await con();
 let usuario = db.collection("usuario");
 
+
 appCampus.get("/", limitGrt(), middlewareVerify, async(req, res) => {
     if(!req.rateLimit) return; 
     let db = await con();
