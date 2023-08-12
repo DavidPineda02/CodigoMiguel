@@ -7,9 +7,9 @@ import { Router } from "express";
 
 const appCampus = Router();  
 
+
 let db = await con();
 let usuario = db.collection("usuario");
-
 
 appCampus.get("/", limitGrt(), middlewareVerify, async(req, res) => {
     if(!req.rateLimit) return; 
@@ -31,3 +31,5 @@ appCampus.post("/", limitGrt(), middlewareVerify, DTOData, async(req, res) => {
     }
 });
 export default appCampus; 
+
+/* DAVID ES PUTO */
