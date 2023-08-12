@@ -15,3 +15,4 @@ export async function con() {
     return {status: 500, message: error};
   }
 }
+/* DAVID ES PUTO */
