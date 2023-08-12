@@ -4,7 +4,8 @@ import { limitGrt } from "../limit/config.js";
 import {middlewareVerify, DTOData} from "../middleware/campus.js";
 import { DTO } from "../limit/token.js";
 import {Router} from "express";
-const appCampus = Router();
+const appCampus = Router();  
+
 
 let db = await con();
 let usuario = db.collection("usuario");
