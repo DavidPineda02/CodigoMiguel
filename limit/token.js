@@ -14,8 +14,8 @@ const appVerify = Router();
 
 const DTO = (p1) => {
     const match = {
-      'usuario': User,
-      'mongo': Error
+        'usuario': User,
+        'mongo': Error
     };
     const inst = match[p1];
     if(!inst) throw {status: 404, message: "Token solicitado no valido"}
