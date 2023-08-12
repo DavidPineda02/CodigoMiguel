@@ -1,5 +1,6 @@
 import { Expose, Transform } from 'class-transformer';
-import { IsDefined} from 'class-validator';
+import { IsDefined } from 'class-validator';
+
 export class User {
     @Expose({ name: 'cedula_usuario' })
     @IsDefined({message: ()=>{ throw {status: 422, message: `La cedula_usuario es obligatoria`}}})

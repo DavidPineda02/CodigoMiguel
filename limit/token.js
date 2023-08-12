@@ -1,16 +1,14 @@
 import 'reflect-metadata';
-import {plainToClass, classToPlain } from 'class-transformer';
+import { plainToClass, classToPlain } from 'class-transformer';
 import dotenv from 'dotenv';
-import {Router} from 'express';
+import { Router } from 'express';
 import { SignJWT, jwtVerify } from 'jose';
 import { User } from "../routers/storage/usuario.js";
 import { Error } from "../routers/storage/mongo.js";
 
-
 dotenv.config("../");
 const appToken = Router();
 const appVerify = Router();
-
 
 const DTO = (p1) => {
     const match = {
@@ -59,5 +57,3 @@ export {
     appVerify,
     DTO
 };
-
-

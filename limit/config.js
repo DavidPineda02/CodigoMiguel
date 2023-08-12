@@ -1,4 +1,5 @@
 import rateLimit from "express-rate-limit";
+
 export let limitGrt = ()=>{
     return rateLimit({
         windowMs: 30 * 1000,
